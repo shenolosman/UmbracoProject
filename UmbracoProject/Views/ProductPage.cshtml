@@ -1,0 +1,40 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ProductPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoProject;
+@{
+    Layout = "Master.cshtml";
+}
+@{
+    var data = await DummyApi.GetRootAsync();
+}
+<div>
+    @if (data == null)
+    {
+        <div>No Content</div>
+    }
+    else
+    {
+        <div>
+            @foreach (var item in data.products)
+            {
+                <ul>
+                    <li># : @item.id</li>
+                    <li>Title : @item.title</li>
+                    <li>Description : @item.description</li>
+                    <li>Price : @item.price</li>
+                    <li>Discount : @item.discountPercentage</li>
+                    <li>Stock : @item.stock</li>
+                    <li>Rating : @item.rating</li>
+                    <li>Brand : @item.brand</li>
+                    <li>Category : @item.category</li>
+                    <li><img src="@item.thumbnail" alt="@item.thumbnail" width="30" height="30" /></li>
+                    @foreach (var imgs in item.images)
+                    {
+                        <li><img src="@imgs" alt="@imgs" width="30" height="30" /></li>
+                    }
+                </ul>
+            }
+        </div>
+    }
+</div>

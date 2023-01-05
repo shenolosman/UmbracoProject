@@ -1,0 +1,9 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+}
+<h1>@Model.Value("headerTitle")</h1>
+<h4>@Model.Value("headerSubTitle")</h4>
+<img src="@Model.Value("headerImage")" alt="@Model.Value("headerImage")">

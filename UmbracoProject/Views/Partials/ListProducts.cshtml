@@ -1,0 +1,41 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using UmbracoProject;
+@{
+    var data = await DummyApi.GetProducts();
+}
+<div>
+    @if (data == null)
+    {
+        <div>No Content</div>
+    }
+    else
+    {
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Thumbnail</th>
+                        <th scope="col">Do!</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in data.products)
+                    {
+                        <tr>
+                            <th scope="row">@item.id</th>
+                            <td>@item.title.ToUpper()</td>
+                            <td>@item.price</td>
+                            <td>@item.category</td>
+                            <td><img src="@item.thumbnail" alt="@item.thumbnail" width="30" height="30" /></td>
+                            <td><a href="productpage/@item.id" class="btn btn-primary">Detail</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

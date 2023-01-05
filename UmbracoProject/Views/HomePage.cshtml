@@ -1,9 +1,40 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoProject;
 @{
     Layout = "Master.cshtml";
+    var products = await DummyApi.GetProducts();
+    var categories = await DummyApi.GetCategories();
 }
-<h1>@Model.Value("headerTitle")</h1>
-<h4>@Model.Value("headerSubTitle")</h4>
-<img src="@Model.Value("headerImage")" alt="@Model.Value("headerImage")">
+<div class="container">
+    <div class="row mb-5">
+        <div class="text-center">
+            <h1>@Model.Value("headerTitle")</h1>
+            <h4>@Model.Value("headerSubTitle")</h4>
+            <img src="https://localhost:44350/media/xywfcwrz/image3.jpg" alt="@Model.Value("headerImage")" class="img-fluid rounded" width="50%">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Products</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Counts</h6>
+                    <p class="card-text">@products.products.Count()</p>
+                    <a href="/productpage" class="card-link">Products</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Categories</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Counts</h6>
+                    <p class="card-text">@categories.Length</p>
+                    <a href="/categorypage" class="card-link">Categories</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

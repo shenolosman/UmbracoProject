@@ -1,9 +1,8 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ProductPage>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.CategoryPage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-
 @{
-    Layout = "Master.cshtml";
+	Layout = "Master.cshtml";
 }
 <h1>@Model.Value("headerTitle")</h1>
-@await Html.PartialAsync("ListProducts")
+@await Html.PartialAsync("ListCategories")

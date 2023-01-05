@@ -2,11 +2,18 @@
 {
     public class DummyApi
     {
-        static string url= "https://dummyjson.com/products";
-        public static async Task<Root?> GetRootAsync()
+        static HttpClient client = new();
+        public static async Task<Root?> GetProducts()
         {
-            var client = new HttpClient();
-            return await client.GetFromJsonAsync<Root?>(url);
+            return await client.GetFromJsonAsync<Root?>("https://dummyjson.com/products");
+        }
+        public static async Task<Product?> GetProductById(int id)
+        {
+            return await client.GetFromJsonAsync<Product?>($"https://dummyjson.com/products/{id}");
+        }
+        public static async Task<string[]> GetCategories()
+        {
+            return await client.GetFromJsonAsync<string[]>("https://dummyjson.com/products/categories");
         }
     }
 
@@ -35,7 +42,7 @@
     //}
     //public class Category
     //{
-    //    public string? name { get; set; }
+    //    public string[] name { get; set; }
     //}
     //"products": [
     //    {

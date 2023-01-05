@@ -16,7 +16,6 @@
             return await client.GetFromJsonAsync<string[]>("https://dummyjson.com/products/categories");
         }
     }
-
     public class Product
     {
         public int id { get; set; }
@@ -31,37 +30,8 @@
         public string? thumbnail { get; set; }
         public string[]? images { get; set; }
     }
-
     public class Root
     {
         public List<Product>? products { get; set; }
     }
-    //public class Image
-    //{
-    //    public string? url { get; set; }
-    //}
-    //public class Category
-    //{
-    //    public string[] name { get; set; }
-    //}
-    //"products": [
-    //    {
-    //  "id": 1,
-    //"title": "iPhone 9",
-    //"description": "An apple mobile which is nothing like apple",
-    //"price": 549,
-    //"discountPercentage": 12.96,
-    //"rating": 4.69,
-    //"stock": 94,
-    //"brand": "Apple",
-    //"category": "smartphones",
-    //"thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
-    //"images": [
-    //  "https://i.dummyjson.com/data/products/1/1.jpg",
-    //  "https://i.dummyjson.com/data/products/1/2.jpg",
-    //  "https://i.dummyjson.com/data/products/1/3.jpg",
-    //  "https://i.dummyjson.com/data/products/1/4.jpg",
-    //  "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
-    //}
-    //]
 }

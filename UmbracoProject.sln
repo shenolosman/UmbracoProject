@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoProject", "UmbracoProject\UmbracoProject.csproj", "{AD6AC2EA-E0A8-4639-B182-60B208E37A55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoProject", "UmbracoProject\UmbracoProject.csproj", "{AD6AC2EA-E0A8-4639-B182-60B208E37A55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{FFDE1B93-984B-456A-ABA4-04BE91A06596}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

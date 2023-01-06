@@ -2,11 +2,6 @@
 
 Used `https://dummyjson.com/products` to fetch data.
 
-Umbraco usename: shenol
-
-Umbraco mail: shenolyalmazosman@gmail.com
-
-Umbraco password: Passw0rd!
 ## Frontend
 
 ![frontend](img/umbraco-frontend-1.PNG "frontend")
